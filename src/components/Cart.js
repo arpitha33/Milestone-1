@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Cart({ cart = [], updateQuantity, clearCart }) {
+function Cart({ cart = [], updateQuantity, clearCart, buyCart }) {
   // Safely calculate the total price using default cart value
   const totalPrice = cart.reduce(
     (total, item) => total + item.price * item.quantity,
@@ -83,6 +83,20 @@ function Cart({ cart = [], updateQuantity, clearCart }) {
               }}
             >
               Remove All Items
+            </button>
+
+            <button
+            onClick={buyCart}
+            style={{
+              marginTop: '10px',
+              marginLeft: '10px',
+              padding: '10px 15px',
+              backgroundColor: '#dc3545',
+              color: '#fff',
+              border: 'none',
+              cursor: 'pointer',
+            }}>
+              Buy Items
             </button>
           </div>
         </>
