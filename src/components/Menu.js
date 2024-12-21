@@ -20,7 +20,7 @@ function Menu() {
     {
       name: 'Pasta',
       description: 'Yummy pasta',
-      imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLCuJy69l2kA9d8pddtKObu3_h9JllCKIEvw&s',
+      imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYMF1l5bIYuJuxPQ_aVdgYutLr2pYH9e2NTg&s',
       price: 7.29,
       rating: 0,
     },
@@ -71,52 +71,62 @@ function Menu() {
     setCart([]); 
   };
 
+  const buyCart = () => {
+    clearCart();
+    alert("Items Ordered Succesfully");
+  }
+
   return (
-    <section id="menu">
+    <>
+    <section id = "menu">
       <h2>Our Menu</h2>
+      <div className='menu-menu'>
       {items.map((item, index) => (
-        <div key={index} className="menu-item" style={{ border: '1px solid #ccc', padding: '10px', margin: '10px 0' }}>
-          <img src={item.imageUrl} alt={item.name} style={{ width: '150px', height: '150px', objectFit: 'cover' }} />
+        <div key={index} className="menu-item">
+          <img className="img-item" src={item.imageUrl} alt={item.name}/>
           <div>
-            <h3>{item.name}</h3>
-            <p>{item.description}</p>
-            <p><strong>Price:</strong> ${item.price.toFixed(2)}</p>
-            <div>
-              {[1, 2, 3, 4, 5].map((star) => (
-                <span
-                  key={star}
-                  style={{
-                    cursor: 'pointer',
-                    color: star <= (ratings[index] || 0) ? '#FFD700' : '#ccc',
-                  }}
-                  onClick={() => handleRating(index, star)}
-                >
-                  ★
-                </span>
-              ))}
-            </div>
-            <button
-              onClick={() => {addToCart(item)}}
+        <h3>{item.name}</h3>
+        <p>{item.description}</p>
+        <p><strong>Price:</strong> ${item.price.toFixed(2)}</p>
+        <div>
+          {[1, 2, 3, 4, 5].map((star) => (
+            <span
+              key={star}
               style={{
-                marginTop: '10px',
-                padding: '5px 10px',
-                backgroundColor: '#28a745',
-                color: '#fff',
-                border: 'none',
                 cursor: 'pointer',
+                color: star <= (ratings[index] || 0) ? '#FFD700' : '#ccc',
               }}
+              onClick={() => handleRating(index, star)}
             >
-              Add to Cart
-            </button>
-          </div>
+              ★
+            </span>
+          ))}
+        </div>
+        <button
+          onClick={() => {addToCart(item)}}
+          style={{
+            marginTop: '10px',
+            padding: '5px 10px',
+            backgroundColor: '#28a745',
+            color: '#fff',
+            border: 'none',
+            cursor: 'pointer',
+          }}
+        >
+          Add to Cart
+        </button>
+      </div>
         </div>
       ))}
-<Cart
-  cart={cart} // Ensure this is passed correctly
-  updateQuantity={updateQuantity}
-  clearCart={clearCart}
-/>
+      </div>
     </section>
+    <Cart
+      cart={cart}
+      updateQuantity={updateQuantity}
+      clearCart={clearCart}
+      buyCart={buyCart}
+    />
+    </>
   );
 }
 
