@@ -7,7 +7,7 @@ function Home() {
   return (
     <section id="home" className="home-section">
       <div className="home-content">
-        <h2>Welcome to Foodie Delight</h2>
+        <h2>Welcome to Food Zone</h2>
         <p>Discover the best food in town, crafted to satisfy your cravings!</p>
         <button className="explore-btn" onClick={()=>navigate("/menu")}>Explore the Menu</button>
         
