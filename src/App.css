@@ -1,38 +1,183 @@
-.App {
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  color: #333;
+  line-height: 1.6;
+}
+
+header {
+  background-color:#2f697a;
+  padding: 20px;
+  text-align: center;
+  color: #fff;
+}
+
+header h1 {
+  font-size: 2rem;
+}
+
+nav ul {
+  list-style:none;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline;
+  margin: 0 10px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+section {
+  padding: 20px;
+  margin: 20px 0;
+}
+
+section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+/* Home.css */
+.home-section {
+  background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsSA9dJaWqsbWokCRqvakBdD5yB7JbSsSCIg&s'); /* Replace with your image URL */
+  background-size: cover;
+  background-position: center;
+  padding: 200px;
+  color: white;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.home-content {
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: rgba(0, 0, 0, 0.5); /* Add some overlay to improve text visibility */
+  padding: 20px;
+  border-radius: 10px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.explore-btn {
+  background-color: #ff6347;
   color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 18px;
+  border-radius: 5px;
+  margin-top: 20px;
 }
 
-.App-link {
-  color: #61dafb;
+.explore-btn:hover {
+  background-color: #e5533d;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.menu-menu {
+  display: inline;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(320px, 1fr));
+  gap: 10px;
+}
+.menu-item {
+  padding: 10px;
+  background-color: rgb(235, 232, 232);
+  border: 1px solid black;
+  text-align: left;
+  padding: 5px;
+}
+
+.menu-item .img-item {
+  width: 100%;
+  object-fit: contain;
+}
+
+form label {
+  display: block;
+  margin: 10px 0 5px;
+}
+
+form input[type="text"],
+form input[type="password"],
+form input[type="email"],
+form input[type="number"],
+form select,
+form textarea {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+form button {
+  background-color: #2f697a;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+form button:hover {
+  background-color:#2f697a;
+}
+
+footer {
+  background-color:#2f697a;
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+footer p {
+  margin: 5px 0;
+}
+
+footer a {
+  color: #2f697a;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+
+
+.quantity-controls {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin: 10px 0;
+}
+
+.quantity-controls button {
+  padding: 5px 10px;
+}
+
+.cart h3 {
+  margin-top: 20px;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+  nav ul li {
+    display: block;
+    margin: 10px 0;
   }
-  to {
-    transform: rotate(360deg);
+
+  header, section, footer {
+    padding: 10px;
   }
 }
